@@ -15,13 +15,12 @@ Skills to be shown:
 - Redis caching
 
 # Table of contents
-
 - [Weather Application](#weather-application)
 - [Table of contents](#table-of-contents)
-  - [Quick Start guide](#quick-start-guide)
-  - [Where does the weather data come from?](#where-does-the-weather-data-come-from)
+- [Quick Start guide](#quick-start-guide)
+- [Where does the weather data come from?](#where-does-the-weather-data-come-from)
 
-## Quick Start guide 
+# Quick Start guide 
 1. Ensure that you have the required software installed
 
     - Java JDK: 21
@@ -65,6 +64,6 @@ Skills to be shown:
         ./mvnw spring-boot:run
         ```
 
-## Where does the weather data come from?
+# Where does the weather data come from?
 
 Please refer to this [link](https://www.visualcrossing.com/weather-api/) for access to the API data. Do note that you may have to create an account to gain an API key to use this application. 

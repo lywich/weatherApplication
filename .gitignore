@@ -1,3 +1,4 @@
 *.lst
 *.class
 target/
+.vscode/settings.json
