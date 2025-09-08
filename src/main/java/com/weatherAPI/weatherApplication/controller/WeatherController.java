@@ -1,14 +1,11 @@
 package com.weatherAPI.weatherApplication.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.weatherAPI.weatherApplication.model.WeatherRequest;
 import com.weatherAPI.weatherApplication.model.WeatherResponse;
 import com.weatherAPI.weatherApplication.service.WeatherService;
-
-import jakarta.validation.Valid;
 
 
 @RestController
@@ -21,8 +18,8 @@ public class WeatherController {
     }
 
     @GetMapping("/weather")
-    public WeatherResponse getWeather(@Valid @ModelAttribute WeatherRequest req) {
-        return weatherService.getWeather(req);
+    public WeatherResponse getWeather(@RequestParam String location) {
+        return weatherService.getWeather(location);
     }
 }
 
