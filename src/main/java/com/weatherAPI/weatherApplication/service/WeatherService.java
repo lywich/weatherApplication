@@ -1,6 +1,7 @@
 package com.weatherAPI.weatherApplication.service;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,6 +19,7 @@ public class WeatherService {
         this.apiKey = apiKey;
     }
 
+    @Cacheable(value = "weatherCache", key = "#request.location + '-' + #request.startDate + '-' + #request.endDate + '-' + #request.locality + '-' + #request.lang")
     public WeatherResponse getWeather(WeatherRequest request) {
         String baseUrl = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline";
 
