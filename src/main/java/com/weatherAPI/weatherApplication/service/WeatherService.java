@@ -32,10 +32,10 @@ public class WeatherService {
             }
         }
 
-        uri.append("?unitGroup=metric")
-           .append("&include=").append(request.getInclude())
-           .append("&key=").append(apiKey)
-           .append("&contentType=json");
+        uri.append("?unitGroup=").append(request.getLocality())
+            .append("&lang=").append(request.getLang())
+            .append("&key=").append(apiKey)
+            .append("&contentType=json");
 
         return restTemplate.getForObject(uri.toString(), WeatherResponse.class);
     }

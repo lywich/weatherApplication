@@ -11,7 +11,8 @@ public class WeatherRequest {
     private String startDate;
     private String endDate;
 
-    private String include = "days";
+    private String locality = "uk";
+    private String lang = "en";
 
     public boolean hasStartDate() {
         return startDate != null && !startDate.isBlank();
