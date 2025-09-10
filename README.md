@@ -55,14 +55,46 @@ Skills to be shown:
 
 4. Run the application 
 
-    - If maven is installed
+    4.1 Run Redis 
+
+     - 4.1.1 On a Windows machine with Docker Desktop 
+         - Run the below command in Powershell to pull the latest version of redis
+
+            ```
+            docker pull redis
+            ```
+         - Run the below command in Powershell with the name "redis-cache" at port 6379
+
+            ```
+            docker run -d --name redis-cache -p 6379:6379 redis
+            ```
+
+         - Run the below command in Powershell to start up the cli
+            ```
+            docker exec -it redis-cache redis-cli
+            ```
+
+         - Run the below command in the same cli to flush any existing data in the cache
+
+            ```
+            flushall
+            ```
+    
+    4.2 Run the application
+
+      - 4.2.1 If maven is installed
         ```
         mvn spring-boot:run
         ```
-    - If maven is not installed
+      - 4.2.2 If maven is not installed
         ```
         ./mvnw spring-boot:run
         ```
+
+    4.3 Check if the application if working my going to the following url link. Please see [WeatherController.java](src/main/java/com/weatherAPI/weatherApplication/controller/WeatherController.java) for token limit and refill rate (Initial capacity of 5 with a refill rate of 1/min).
+    ```
+    http://localhost:8080/weather?location=Singapore
+    ```
 
 # Where does the weather data come from?
 
